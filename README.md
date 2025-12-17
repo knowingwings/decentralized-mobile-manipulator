@@ -30,7 +30,7 @@ Developed as part of BEng dissertation research in Mechatronics Engineering at U
 
 ### Installation
 
-\`\`\`bash
+```bash
 # Clone the repository
 git clone https://github.com/knowingwings/decentralized-mobile-manipulator.git
 cd decentralized-mobile-manipulator
@@ -41,13 +41,13 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### Running the Interactive GUI
 
-\`\`\`bash
+```bash
 python main.py --mode gui --use-gpu
-\`\`\`
+```
 
 The GUI provides:
 - Real-time visualization of robot positions and task allocations
@@ -57,20 +57,20 @@ The GUI provides:
 
 ### Running Batch Experiments
 
-\`\`\`bash
+```bash
 # Run factorial experiment with default config
 python main.py --mode experiment --config config/factorial_design.yaml --use-gpu
-\`\`\`
+```
 
 ### Analyzing Results
 
-\`\`\`bash
+```bash
 python main.py --mode analysis --results results/factorial_experiment.csv
-\`\`\`
+```
 
 ## Repository Structure
 
-\`\`\`
+```
 .
 ├── core/                       # Core algorithm implementation
 │   ├── auction.py              # Auction algorithm and bid calculation
@@ -101,7 +101,7 @@ python main.py --mode analysis --results results/factorial_experiment.csv
 ├── main.py                     # Entry point
 ├── requirements.txt            # Python dependencies
 └── README.md                   # This file
-\`\`\`
+```
 
 ## Algorithm Details
 
@@ -113,15 +113,15 @@ Each robot maintains:
 - Task assignments (locally determined, globally coordinated)
 
 **Bid calculation:**
-\`\`\`
+```
 bid_ij = α₁·capability - α₂·distance - α₃·workload + α₄·priority - α₅·price_j
-\`\`\`
+```
 
 **Price update with consensus:**
-\`\`\`
+```
 price_j = max(bids for task_j)
 price_j ← (1-γ)·price_j + γ·Σ(neighbor_prices)  # Time-weighted consensus
-\`\`\`
+```
 
 ### GPU Acceleration
 
@@ -192,7 +192,7 @@ Algorithm performance (2 robots, 10 tasks, ε=0.05):
 
 If you use this code in your research, please cite:
 
-\`\`\`bibtex
+```bibtex
 @software{lehuray2024distributed,
   author = {Le Huray, Thomas},
   title = {Distributed Auction Algorithm for Multi-Robot Task Allocation},
@@ -200,7 +200,7 @@ If you use this code in your research, please cite:
   publisher = {GitHub},
   url = {https://github.com/knowingwings/decentralized-mobile-manipulator}
 }
-\`\`\`
+```
 
 ## License
 
@@ -217,4 +217,4 @@ BEng Mechatronics (First Class Honours) @ University of Gloucestershire
 
 ---
 
-*Part of ongoing research in decentralized multi-robot coordination.*
+*Part of research in decentralized multi-robot coordination completed as a requirement for BEng Mechatronics.*
