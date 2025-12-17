@@ -1,0 +1,22 @@
+# config/termination_comparison.yaml
+parameters:
+  num_tasks: [8, 16, 32]
+  comm_delay: [0, 200]
+  packet_loss: [0.0, 0.3]
+  epsilon: [0.01, 0.05, 0.2, 0.5]
+  termination_mode: ["assignment-complete", "price-stabilized"]  # Test both modes
+  price_stability_threshold: 0.01
+
+experiment:
+  num_runs: 5  # Run each combination 5 times
+  simulation_time: 300
+  robot_count: 2
+  workspace_size: [10, 8]
+  random_seed: 42
+  failure_probability: 0.5
+  
+analysis:
+  confidence_level: 0.95
+  anova_significance: 0.05
+  include_interactions: true
+  response_variables: ["makespan", "message_count", "optimality_gap", "recovery_time"]

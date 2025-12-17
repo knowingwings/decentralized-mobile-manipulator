@@ -1,0 +1,35 @@
+# enhanced_debug_test.yaml - For validating all three fixes
+parameters:
+  # Wide range of epsilon values to verify Issue #1 fix
+  num_tasks: [8, 16]
+  comm_delay: [0, 200]
+  packet_loss: [0.0, 0.2]
+  epsilon: [0.01, 0.1, 1.0, 10.0]  # Extreme range to amplify effects
+
+experiment:
+  # Settings to test recovery time (Issue #2)
+  num_runs: 5  # Multiple runs for statistical significance
+  simulation_time: 180  # seconds
+  robot_count: 3
+  workspace_size: [5, 5]
+  random_seed: 42
+  failure_probability: 1.0  # Guarantee failure injection
+  failure_time_fraction: 0.4  # Inject failure after 40% of tasks assigned
+  
+  # Settings to test workload balance (Issue #3)
+  # Deliberately create robots with varying capabilities
+  robot_capabilities:
+    - [0.9, 0.9, 0.9, 0.9, 0.9]  # High capability robot
+    - [0.5, 0.5, 0.5, 0.5, 0.5]  # Medium capability robot
+    - [0.2, 0.3, 0.4, 0.3, 0.2]  # Low capability robot
+
+debug:
+  verbose: true
+  log_frequency: 10
+  log_to_file: true
+  log_file: "enhanced_debug_test_output.log"
+
+visualization:
+  enabled: true
+  save_plots: true
+  plot_dir: "debug_plots"
