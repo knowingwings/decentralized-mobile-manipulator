@@ -1,19 +1,19 @@
 # Distributed Auction Algorithm for Multi-Robot Task Allocation
 
-GPU-accelerated simulation framework implementing distributed auction-based task allocation for decentralized control of dual mobile manipulators in collaborative assembly tasks.
+GPU-accelerated simulation framework implementing distributed auction-based task allocation for decentralised control of dual mobile manipulators in collaborative assembly tasks.
 
 ## Overview
 
-This repository contains a Python/PyTorch implementation of a distributed auction algorithm for decentralized multi-robot coordination. The system enables mobile manipulators to autonomously allocate tasks among themselves without central coordination, while maintaining provable convergence properties and bounded optimality gaps.
+This repository contains a Python/PyTorch implementation of a distributed auction algorithm for decentralised multi-robot coordination. The system enables mobile manipulators to autonomously allocate tasks among themselves without central coordination, while maintaining provable convergence properties and bounded optimality gaps.
 
 **Key features:**
-- Decentralized task allocation using distributed auction algorithm
+- Decentralised task allocation using distributed auction algorithm
 - GPU-accelerated computation with PyTorch/CUDA for batch bid calculations
 - Robust failure recovery with time-weighted consensus protocol
 - Collaborative task handling with leader-follower coordination
 - Task dependency management with topological ordering
-- Interactive GUI for visualization and parameter tuning
-- Comprehensive experiment framework for parameter optimization
+- Interactive GUI for visualisation and parameter tuning
+- Comprehensive experiment framework for parameter optimisation
 
 This implementation is based on theoretical foundations from Zavlanos et al. (2008) with significant extensions for communication constraints, task dependencies, collaborative tasks, and failure recovery.
 
@@ -23,7 +23,7 @@ Developed as part of BEng dissertation research in Mechatronics Engineering at U
 
 **Mathematical guarantees:**
 - Convergence time: O(K² · b_max/ε) iterations
-- Optimality gap: ≤ 2ε from centralized optimal
+- Optimality gap: ≤ 2ε from centralised optimal
 - Recovery time: O(|T_f|) + O(b_max/ε) after robot failure
 
 ## Quick Start
@@ -50,7 +50,7 @@ python main.py --mode gui --use-gpu
 ```
 
 The GUI provides:
-- Real-time visualization of robot positions and task allocations
+- Real-time visualisation of robot positions and task allocations
 - Interactive parameter tuning (epsilon, alpha weights, etc.)
 - Live metrics (convergence time, optimality gap, communication overhead)
 - Failure injection and recovery testing
@@ -80,10 +80,10 @@ python main.py --mode analysis --results results/factorial_experiment.csv
 │   ├── gpu_accelerator.py      # GPU acceleration with PyTorch
 │   ├── experiment_runner.py    # Batch experiment execution
 │   ├── analysis.py             # Statistical analysis
-│   └── centralized_solver.py   # Optimal baseline (Hungarian algorithm)
+│   └── centralised_solver.py   # Optimal baseline (Hungarian algorithm)
 │
-├── gui/                        # Interactive visualization
-│   ├── visualization.py        # Main GUI application
+├── gui/                        # Interactive visualisation
+│   ├── visualisation.py        # Main GUI application
 │   ├── control_panel.py        # Parameter controls
 │   └── plots.py                # Real-time plotting
 │
@@ -167,7 +167,7 @@ Benchmarks on AMD Radeon RX 7900 XTX (24GB):
 
 Algorithm performance (2 robots, 10 tasks, ε=0.05):
 - Convergence: 12-18 iterations (typical)
-- Optimality gap: < 2% from centralized optimal
+- Optimality gap: < 2% from centralised optimal
 - Recovery time: 3-5 iterations after failure
 
 ## Related Work
@@ -217,4 +217,4 @@ BEng Mechatronics (First Class Honours) @ University of Gloucestershire
 
 ---
 
-*Part of research in decentralized multi-robot coordination completed as a requirement for BEng Mechatronics.*
+*Part of research in decentralised multi-robot coordination completed as a requirement for BEng Mechatronics.*
