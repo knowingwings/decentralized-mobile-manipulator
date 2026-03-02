@@ -1,0 +1,14 @@
+# config/gpu_test.yaml
+parameters:
+  num_tasks: [4, 16]
+  comm_delay: [0, 200]
+  packet_loss: [0, 0.3]
+  epsilon: [0.01, 0.2]
+
+experiment:
+  num_runs: 3
+  simulation_time: 300
+  robot_count: 2
+  workspace_size: [4, 4]
+  random_seed: 42
+  failure_probability: 0.5

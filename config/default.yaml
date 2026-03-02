@@ -1,0 +1,21 @@
+# config/default.yaml
+parameters:
+  num_tasks: 8
+  comm_delay: 0
+  packet_loss: 0.0
+  epsilon: 0.01
+  termination_mode: "assignment-complete"  # Default mode
+  price_stability_threshold: 0.01
+
+experiment:
+  num_runs: 1
+  simulation_time: 300
+  robot_count: 2
+  workspace_size: [10, 8]
+  random_seed: 42
+  failure_probability: 0.0
+  
+visualization:
+  update_interval: 50  # ms
+  show_trajectories: true
+  animation_speed: 1.0
