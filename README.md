@@ -280,7 +280,9 @@ These limitations are discussed in detail in Section 6 of the dissertation and r
 
 ## License
 
-MIT License — see LICENSE for details.
+Apache License 2.0: see `LICENSE` and `NOTICE`.
+
+The first version (commit `0add095`, 2 March 2026) was published under the MIT licence, and copies of it stay under MIT.
 
 ## Author
 
